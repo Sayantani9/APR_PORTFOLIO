@@ -1,217 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Akshay Perumal Raj — Mechanical Engineering, automotive R&D, mobility systems and engineering technology portfolio.">
-<meta name="author" content="Akshay Perumal Raj">
-<title>Akshay Perumal Raj | Mechanical Engineering & Automotive R&D</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Akshay Perumal Raj — Mechanical Engineering, Automotive R&D and Mobility Systems">
+<title>Akshay Perumal Raj | Engineering Portfolio</title>
 <style>
-:root{
-  --bg:#f7f7f4; --paper:#fff; --ink:#111; --muted:#606060; --line:rgba(0,0,0,.12);
-  --accent:#e53935; --accent2:#ffb300; --shadow:0 16px 50px rgba(0,0,0,.08);
-  --grid:rgba(20,20,20,.075);
-}
-[data-theme="dark"]{
-  --bg:#0d0f10; --paper:#121516; --ink:#f5f5f2; --muted:#a8adaa; --line:rgba(255,255,255,.13);
-  --accent:#ff5b57; --accent2:#ffd166; --grid:rgba(255,255,255,.055); --shadow:0 18px 60px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background-color:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
- background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);
- background-size:28px 28px;opacity:.9}
-a{color:inherit;text-decoration:none}
-.container{width:min(1160px,92%);margin:auto}
-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.navin{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-weight:900;letter-spacing:-.04em}.brand span{color:var(--accent)}
-.navlinks{display:flex;gap:22px;font-size:.88rem;font-weight:700;color:var(--muted)}
-.navlinks a:hover{color:var(--ink)}
-.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 12px;cursor:pointer;font-size:1rem}
-.hero{padding:82px 0 70px}
-.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:center}
-.kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);padding:7px 11px;border-radius:999px;font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;background:var(--paper)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 15%,transparent)}
-h1{font-size:clamp(3.2rem,8vw,6.8rem);line-height:.9;letter-spacing:-.075em;margin:22px 0 22px;max-width:900px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.lede{font-size:clamp(1.05rem,2vw,1.35rem);max-width:760px;color:var(--muted);margin:0 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:11px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border-radius:10px;border:1px solid var(--ink);font-weight:800;font-size:.9rem;transition:.2s}
-.btn.primary{background:var(--ink);color:var(--bg)}
-.btn:hover{transform:translateY(-2px)}
-.profile-card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:18px;transform:rotate(1deg)}
-.profile-frame{aspect-ratio:1/1.08;overflow:hidden;background:linear-gradient(135deg,#ddd,#f8f8f8);display:grid;place-items:center;position:relative}
-.profile-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.profile-fallback{font-size:5rem;font-weight:950;letter-spacing:-.08em;color:#222}
-.profile-label{font-size:.72rem;color:var(--muted);margin-top:11px;display:flex;justify-content:space-between}
-section{padding:76px 0;border-top:1px solid var(--line)}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:28px}
-.eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-h2{font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.06em;line-height:1;margin:7px 0 0}
-.section-note{max-width:420px;color:var(--muted);font-size:.94rem}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.panel{background:var(--paper);border:1px solid var(--line);padding:25px}
-.panel p{margin:0;color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.stat{background:var(--paper);padding:23px}.stat strong{font-size:2rem;letter-spacing:-.06em;display:block}.stat span{color:var(--muted);font-size:.8rem}
-.timeline{display:grid;gap:14px}
-.item{display:grid;grid-template-columns:170px 1fr;gap:28px;background:var(--paper);border:1px solid var(--line);padding:22px}
-.item .date{font-size:.78rem;font-weight:900;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
-.item h3{margin:0 0 5px;font-size:1.1rem}.item p{margin:0;color:var(--muted);font-size:.94rem}
-.item ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:.9rem}
-.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.project{background:var(--paper);border:1px solid var(--line);padding:25px;position:relative;overflow:hidden}
-.project:after{content:"";position:absolute;right:-35px;top:-35px;width:110px;height:110px;border:1px solid var(--line);transform:rotate(45deg)}
-.project-num{font:900 .75rem/1 monospace;color:var(--accent)}
-.project h3{font-size:1.35rem;letter-spacing:-.035em;margin:14px 0 9px}.project p{color:var(--muted);margin:0}
-.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.badge{font:700 .72rem/1 monospace;border:1px solid var(--line);padding:6px 8px;border-radius:6px}
-.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill{background:var(--paper);border:1px solid var(--line);padding:18px}.skill b{display:block;margin-bottom:9px}.skill div{font-size:.85rem;color:var(--muted)}
-.pub{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;border-bottom:1px solid var(--line);padding:18px 0}.pub:last-child{border-bottom:0}.pub strong{display:block}.pub span{color:var(--muted);font-size:.82rem}.pub-id{font:700 .72rem monospace;color:var(--accent);text-align:right}
-.contact{background:var(--ink);color:var(--bg);border-radius:18px;padding:38px}.contact .eyebrow{color:var(--accent2)}.contact h2{max-width:750px}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:28px}.contact-link{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid color-mix(in srgb,var(--bg) 20%,transparent);font-weight:700}.contact-link small{color:color-mix(in srgb,var(--bg) 60%,transparent)}
-footer{padding:35px 0 55px;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;gap:20px}
-@media(max-width:800px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding-top:55px}.profile-card{max-width:390px;margin:auto}.project-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.item{grid-template-columns:1fr;gap:7px}.navlinks{display:none}.section-head{display:block}.section-note{margin-top:12px}.stats{grid-template-columns:1fr}}
-@media(max-width:480px){.skills{grid-template-columns:1fr}.hero h1{font-size:3.35rem}.container{width:min(92%,1160px)}}
+:root{--bg:#f7f7f3;--paper:#fff;--ink:#111;--muted:#5c6166;--line:#d7d7d0;--accent:#ff4d00;--grid:rgba(0,0,0,.055)}
+[data-theme=dark]{--bg:#101010;--paper:#171717;--ink:#f5f5f0;--muted:#a5a5a0;--line:#303030;--accent:#ff6a26;--grid:rgba(255,255,255,.045)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;font:16px/1.65 Inter,system-ui,sans-serif}a{color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 93%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-weight:950;text-decoration:none;letter-spacing:-.05em}.logo b{color:var(--accent)}nav{display:flex;gap:18px}nav a{text-decoration:none;font-size:12px;font-weight:800;color:var(--muted)}nav a:hover{color:var(--accent)}
+.actions{display:flex;gap:8px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border:1px solid var(--ink);border-radius:6px;background:var(--paper);text-decoration:none;font-size:12px;font-weight:900;cursor:pointer}.btn:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--accent)}.primary{background:var(--ink);color:var(--paper)}.hire{background:var(--accent);border-color:var(--accent);color:#fff}.bulb{width:42px;padding:0;font-size:18px}
+section{padding:86px 0;border-bottom:1px solid var(--line)}.hero{min-height:calc(100vh - 70px);display:flex;align-items:center}.heroGrid{display:grid;grid-template-columns:1.7fr .65fr;gap:55px;align-items:end}.kicker{color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}h1{font-size:clamp(3.1rem,8vw,7rem);line-height:.87;letter-spacing:-.075em;margin:0}.hero p{max-width:800px;color:var(--muted);font-size:19px;margin:28px 0}.tags,.chips{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}.tag,.chip{border:1px solid var(--line);background:var(--paper);padding:6px 9px;border-radius:4px;font-size:11px;font-weight:800}.photo{aspect-ratio:1;border:1px solid var(--ink);background:var(--paper);box-shadow:12px 12px 0 var(--accent);overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.fallback{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:950;font-size:22px}
+.head{display:grid;grid-template-columns:.4fr 1fr;gap:40px;margin-bottom:42px}.num{font-size:11px;color:var(--accent);font-weight:950;letter-spacing:.12em}h2{font-size:clamp(2.1rem,4vw,4rem);line-height:.98;letter-spacing:-.055em;margin:0}.lead{color:var(--muted);max-width:820px;margin:16px 0}.card{background:var(--paper);border:1px solid var(--line);padding:27px;box-shadow:0 14px 45px rgba(0,0,0,.06)}.card p{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.exp{background:var(--paper);border:1px solid var(--line);padding:25px}.org{color:var(--accent);font-size:11px;font-weight:950;letter-spacing:.06em}.exp h3{margin:7px 0;font-size:19px;line-height:1.25}.exp p{color:var(--muted);font-size:14px;margin:10px 0}
+.row{border-top:1px solid var(--line);padding:24px 0}.row:first-child{border-top:0}.edu{display:grid;grid-template-columns:1fr auto;gap:20px}.edu h3,.research h3{margin:0;font-size:17px}.small{color:var(--muted);font-size:13px}.score{color:var(--accent);font-weight:950}
+.project{display:grid;grid-template-columns:55px 1fr;gap:20px;border-top:1px solid var(--line);padding:28px 0}.project:first-of-type{border-top:0}.pnum{color:var(--accent);font-weight:950}.project h3{margin:0 0 8px;font-size:21px}.project p{color:var(--muted);margin:0;font-size:14px}
+.research{display:grid;grid-template-columns:50px 1fr;gap:18px;border-top:1px solid var(--line);padding:24px 0}.researchNo{color:var(--accent);font-weight:950}.research p{color:var(--muted);font-size:13px;margin:6px 0}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stackBox{background:var(--paper);border:1px solid var(--line);padding:21px}.stackBox h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em}.stackBox p{font-weight:750;font-size:14px;line-height:1.9}
+.contact{background:var(--ink);color:var(--paper);border-bottom:0}.contact .lead{color:#aaa}.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.links{display:grid}.links a{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #444;text-decoration:none;font-weight:800}.links a span:last-child{color:var(--accent)}
+footer{padding:25px 0;color:var(--muted);font-size:12px}
+@media(max-width:850px){nav{display:none}.heroGrid,.head,.contactGrid{grid-template-columns:1fr}.photo{max-width:300px}.grid2,.stack{grid-template-columns:1fr}section{padding:65px 0}}@media(max-width:520px){.actions .btn.hire{display:none}.hero{padding:60px 0}.project,.research{grid-template-columns:1fr;gap:5px}.edu{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="container navin">
-    <a class="brand" href="#top">AKSHAY<span>.</span></a>
-    <div class="navlinks">
-      <a href="#work">Work</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#contact">Contact</a>
-    </div>
-    <button class="theme" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">💡</button>
-  </div>
-</nav>
+<header><div class="wrap nav"><a class="logo" href="#top">AKSHAY<b>.</b></a><nav>
+<a href="#summary">SUMMARY</a><a href="#education">EDUCATION</a><a href="#experience">INTERNSHIPS</a><a href="#research">RESEARCH</a><a href="#projects">PROJECTS</a><a href="#stack">TECH STACK</a></nav>
+<div class="actions"><a class="btn hire" href="mailto:akshaypraj2005@gmail.com?subject=Hiring%20Opportunity%20%E2%80%94%20Akshay%20Perumal%20Raj">HIRE ME</a><button class="btn bulb" id="theme" aria-label="Toggle dark mode">💡</button></div></div></header>
 
 <main id="top">
-<section class="hero" style="border-top:0">
-<div class="container hero-grid">
-  <div>
-    <div class="kicker"><span class="dot"></span> Mechanical Engineering · Automotive R&D</div>
-    <h1>Engineering the gap between <em>mechanics</em> and intelligent systems.</h1>
-    <p class="lede">Mechanical Engineering undergraduate focused on automotive systems, mobility, testing, simulation and engineering technology — with hands-on experience spanning research, manufacturing and software-enabled problem solving.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:akshaypraj2005@gmail.com">Hire / Connect ↗</a>
-      <a class="btn" href="https://www.linkedin.com/in/akshay-p-raj/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a class="btn" href="#projects">View engineering work ↓</a>
-    </div>
-  </div>
-  <div class="profile-card">
-    <div class="profile-frame">
-      <!-- Put your LinkedIn profile photo at assets/profile.jpg -->
-      <img src="assets/profile.jpg" alt="Akshay Perumal Raj profile photo"
-           onerror="this.style.display='none';document.getElementById('fallback').style.display='block';">
-      <div id="fallback" class="profile-fallback" style="display:none">APR</div>
-    </div>
-    <div class="profile-label"><span>AKSHAY PERUMAL RAJ</span><span>CHENNAI · INDIA</span></div>
-  </div>
-</div>
-</section>
+<section class="hero"><div class="wrap heroGrid"><div>
+<div class="kicker">Mechanical Engineering · Automotive R&D · Modern Mobility</div><h1>AKSHAY<br>PERUMAL RAJ</h1>
+<p>Mechanical Engineering undergraduate with experience across automotive engineering, electric mobility research, engine testing, vehicle development, manufacturing and software-enabled engineering systems.</p>
+<div class="tags"><span class="tag">B.E. Mechanical Engineering</span><span class="tag">Honours — Modern Mobility Systems</span><span class="tag">IIT Madras — BS Data Science</span><span class="tag">CGPA 9.226</span></div>
+<div class="actions"><a class="btn primary" href="mailto:akshaypraj2005@gmail.com?subject=Hiring%20Opportunity%20%E2%80%94%20Akshay%20Perumal%20Raj">✉ Hire / Email</a><a class="btn" href="https://www.linkedin.com/in/akshay-p-raj/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://www.youtube.com/@PistonsAutoPedia" target="_blank" rel="noopener">YouTube ↗</a></div>
+</div><div class="photo"><img src="assets/profile.jpg" alt="Akshay Perumal Raj" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fallback" style="display:none">AKSHAY<br>PERUMAL RAJ</div></div></div></section>
 
-<section id="work">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">01 / Experience</div><h2>Where engineering meets execution.</h2></div>
-  <div class="section-note">Industry exposure across automotive R&D, electric mobility, manufacturing, industrial utilities and sustainability-focused product development.</div></div>
-  <div class="timeline">
-    <article class="item"><div class="date">Current · Ford</div><div><h3>Ford Motor Company — Global Technology & Business Centre, Chennai</h3><p>Supporting Ford Everest and Ford Ranger programs for the Australian market through feature benchmarking, value engineering, and development of an AI-powered natural-language search agent for internal engineering knowledge systems. Also contributed to product validation, competitive benchmarking and field research.</p></div></article>
-    <article class="item"><div class="date">Research</div><div><h3>Centre for Electric Mobility, SRMIST — KTR</h3><p>Research Intern contributing to studies on advanced motor and battery cooling techniques for electric vehicle applications.</p></div></article>
-    <article class="item"><div class="date">Manufacturing</div><div><h3>GSANTCK Solutions Pvt. Ltd.</h3><p>Worked on the BOJAY BJ-7800 Retrofitting Project with exposure to CNC machining, assembly-line operations and interdisciplinary system integration.</p></div></article>
-    <article class="item"><div class="date">Industrial Training</div><div><h3>Hotel Turyaa, Chennai</h3><p>Engineering Department training covering boilers, HVAC/chillers, fire suppression, wastewater treatment, cold storage, electrical distribution and engineering manpower planning.</p></div></article>
-    <article class="item"><div class="date">Technology Leadership</div><div><h3>The Invincible Fire — SHUDDH</h3><p>Serving as CTO for a student-led startup initiative, leading early-stage technology development, concept validation and prototype planning for intelligent waste-management and sustainability solutions.</p></div></article>
-  </div>
-</div>
-</section>
+<section id="summary"><div class="wrap"><div class="head"><div class="num">01 / PROFESSIONAL SUMMARY</div><div><h2>Engineering with systems thinking.</h2><p class="lead">Mechanical Engineering undergraduate with proven experience leading and coordinating automotive-focused projects and research initiatives, with hands-on experience developing engineering solutions across mechanical and software domains.</p></div></div><div class="card"><p>Experienced in managing interdisciplinary teams, mentoring peers and driving projects from concept to execution. Focused on engine systems, testing environments and systems-level problem solving, with a demonstrated ability to quickly learn and apply new engineering concepts. Seeking R&D opportunities where analytical thinking and hands-on project delivery create real impact.</p></div></div></section>
 
-<section id="projects">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">02 / Selected Projects</div><h2>Built, tested, analysed.</h2></div>
-  <div class="section-note">Projects that show systems thinking: from engine-test data and vehicle structures to computer vision and adaptive control.</div></div>
-  <div class="project-grid">
-    <article class="project"><div class="project-num">PROJECT / 01</div><h3>Engine Tappet Noise Detection System</h3><p>Ashok Leyland consultancy project. Led an interdisciplinary Mechanical + Electronics team developing a tappet-noise detection approach for engine test-bench validation; worked on noise data acquisition, analysis, sensor mounting and vibration damping.</p><div class="badges"><span class="badge">NVH</span><span class="badge">Test Bench</span><span class="badge">Data Acquisition</span><span class="badge">Mechanical Design</span></div></article>
-    <article class="project"><div class="project-num">PROJECT / 02</div><h3>Go-Kart Design & Development</h3><p>Technical Head for a student IC go-kart program covering chassis, fabrication, powertrain and braking under competition regulations. Performed ANSYS crash/impact analysis. Cleared technical inspection and secured AIR 18 at Formula Kart Design Challenge Season 9; won Aesthetic and Cost Optimization events in the CV category at Formula Kart Racing Championship Season 6.</p><div class="badges"><span class="badge">ANSYS</span><span class="badge">Chassis</span><span class="badge">Powertrain</span><span class="badge">Braking</span></div></article>
-    <article class="project"><div class="project-num">PROJECT / 03</div><h3>Intelli-Speed Limiter</h3><p>Adaptive automobile speed-enforcement system integrating Computer Vision, RFID and GPS inputs. Built the Python detection and communication workflow, then simulated redundancy-based control logic in MATLAB for real-time speed capping and lowest-limit priority.</p><div class="badges"><span class="badge">Python</span><span class="badge">Computer Vision</span><span class="badge">RFID</span><span class="badge">MATLAB</span></div></article>
-    <article class="project"><div class="project-num">PROJECT / 04</div><h3>Thermal Management of PMSM Motors</h3><p>Comprehensive study of cooling techniques and coolant optimisation for permanent-magnet synchronous motors, presented at the 4th International Conference on Advanced Intelligence and Innovations in Mechanical Sciences.</p><div class="badges"><span class="badge">EV</span><span class="badge">Thermal</span><span class="badge">PMSM</span></div></article>
-  </div>
-</div>
-</section>
+<section id="education"><div class="wrap"><div class="head"><div class="num">02 / EDUCATION</div><div><h2>Academic foundation.</h2><p class="lead">A multidisciplinary academic path combining mechanical engineering, mobility systems, data science, product design and computing.</p></div></div>
+<div class="row edu"><div><h3>Panimalar Engineering College</h3><b>Bachelor of Engineering, Mechanical Engineering</b><div class="small">Honours in Modern Mobility Systems · 2023–2027</div></div><div class="score">CGPA 9.226</div></div>
+<div class="row edu"><div><h3>Indian Institute of Technology, Madras</h3><b>Bachelor of Science, Data Science and Application</b><div class="small">2023 – Ongoing</div></div></div>
+<div class="row edu"><div><h3>CADD Centre, Velacherry, Chennai</h3><b>Executive Diploma in Product Design</b><div class="small">2024</div></div></div>
+<div class="row edu"><div><h3>CSC Computer Education Pvt. Ltd.</h3><b>Honours Diploma in Computer Application</b><div class="small">2023–2024 · Grade A</div></div></div></div></section>
 
-<section id="research">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">03 / Research & Education</div><h2>Research-led engineering.</h2></div>
-  <div class="section-note">Academic depth across mechanical engineering, modern mobility systems, data science, product design and applied research.</div></div>
-  <div class="about-grid">
-    <div class="panel">
-      <div class="eyebrow">Education</div>
-      <h3>Panimalar Engineering College</h3><p>B.E. Mechanical Engineering · Honours in Modern Mobility Systems · 2023–2027 · CGPA 9.226</p>
-      <br><h3>Indian Institute of Technology, Madras</h3><p>B.S. Data Science and Applications · 2023–Ongoing</p>
-      <br><h3>Product + Computing</h3><p>Executive Diploma in Product Design — CADD Centre, Velacherry, Chennai · 2024<br>Honours Diploma in Computer Application — CSC Computer Education · 2023–2024 · Grade A</p>
-    </div>
-    <div class="panel">
-      <div class="eyebrow">Research Presentations</div>
-      <div class="pub"><div><strong>Electric Vehicles in Clean India Campaign</strong><span>National Seminar-2024, Institute of Hotel Management & Catering Technology, Chennai</span></div><div class="pub-id">2024</div></div>
-      <div class="pub"><div><strong>Customer Perception on Electric Vehicles & Range Anxiety</strong><span>All-India Research Scholar Summit-2024, IIT Madras</span></div><div class="pub-id">IITM</div></div>
-      <div class="pub"><div><strong>FEA of FDM-Printed PLA Impeller</strong><span>PECMACT 8th International Conference-2025</span></div><div class="pub-id">2025</div></div>
-    </div>
-  </div>
-  <div class="panel" style="margin-top:16px">
-    <div class="eyebrow">Published Work</div>
-    <div class="pub"><div><strong>A Study on Contribution of Electric Vehicles in Clean India Campaign and Its Sustainability & Eco-friendliness</strong><span>Published research work</span></div><div class="pub-id">ISBN<br>978-81-968444-1-7</div></div>
-    <div class="pub"><div><strong>Finite Element Analysis of Impeller Manufactured by FDM 3D Printer Using PLA Material</strong><span>Published research work</span></div><div class="pub-id">E-ISSN<br>2348-1269<br>P-ISSN 2349-5138</div></div>
-  </div>
-</div>
-</section>
+<section id="experience"><div class="wrap"><div class="head"><div class="num">03 / PROFESSIONAL EXPERIENCES & INTERNSHIPS</div><div><h2>Engineering meets execution.</h2><p class="lead">Industry and research exposure spanning automotive programs, electric mobility, manufacturing, industrial utilities, renewable energy and startup technology development.</p></div></div>
+<div class="grid2">
+<article class="exp"><div class="org">FORD MOTOR COMPANY — GLOBAL TECHNOLOGY & BUSINESS CENTRE, CHENNAI</div><h3>Automotive Engineering / Market Survey Experience</h3><p>Currently supporting the Ford Everest and Ford Ranger programs for the Australian market through feature benchmarking, value engineering and development of an AI-powered natural-language search agent for internal engineering knowledge systems. Also contributed to product validation, competitive benchmarking and field research through structured customer interviews and café site visits to identify customer requirements, operational challenges and sustainability needs.</p></article>
+<article class="exp"><div class="org">CENTRE FOR ELECTRIC MOBILITY, SRMIST — KTR</div><h3>Research Intern</h3><p>Contributed to studies on advanced motor and battery cooling techniques in electric-vehicle applications, gaining practical research exposure to thermal-management problems in modern electric mobility.</p></article>
+<article class="exp"><div class="org">GSANTCK SOLUTIONS PVT. LTD.</div><h3>BOJAY BJ-7800 Retrofitting Project</h3><p>Participated in CNC machining, assembly-line operations and interdisciplinary system integration, connecting design intent with manufacturing and implementation constraints.</p></article>
+<article class="exp"><div class="org">HOTEL TURYAA, CHENNAI</div><h3>Engineering Department Training</h3><p>Gained hands-on exposure to boilers, HVAC and chiller systems, fire suppression, wastewater treatment, cold storage, electrical distribution and engineering manpower planning.</p></article>
+<article class="exp"><div class="org">GREEN ENVIRO INFRASTRUCTURE PVT. LTD., KANNIYAKUMARI</div><h3>Renewable Energy Site Exposure</h3><p>Conducted site visits to renewable-energy projects, gaining exposure to wind and solar power-generation systems and associated operational processes.</p></article>
+<article class="exp"><div class="org">THE INVINCIBLE FIRE — STUDENT-LED STARTUP INITIATIVE</div><h3>Chief Technology Officer — SHUDDH</h3><p>Leading early-stage technology development, concept validation and prototype planning for SHUDDH, a sustainability-focused intelligent waste-management initiative.</p></article>
+</div></div></section>
 
-<section id="stack">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">04 / Technical Stack</div><h2>Tools I work with.</h2></div></div>
-  <div class="skills">
-    <div class="skill"><b>CAD & 3D Modelling</b><div>SolidWorks<br>CATIA V5<br>Fusion 360<br>AutoCAD</div></div>
-    <div class="skill"><b>Simulation & Analysis</b><div>ANSYS</div></div>
-    <div class="skill"><b>Programming</b><div>Python<br>Java<br>MATLAB</div></div>
-    <div class="skill"><b>Manufacturing & Prototyping</b><div>CNCTrain — Lathe & Milling<br>Ultimaker Cura<br>ArtCAM<br>PlotBot</div></div>
-  </div>
-</div>
-</section>
+<section id="research"><div class="wrap"><div class="head"><div class="num">04 / RESEARCH PAPER PRESENTATIONS</div><div><h2>Research, presented.</h2><p class="lead">Research work spanning electric mobility, sustainability, customer perception, additive manufacturing and finite-element analysis.</p></div></div>
+<div class="research"><div class="researchNo">01</div><div><h3>A Study on Contribution of Electric Vehicles in Clean India Campaign and Its Sustainability & Eco-friendliness</h3><p>National Seminar-2024 · Institute of Hotel Management & Catering Technology, Chennai</p></div></div>
+<div class="research"><div class="researchNo">02</div><div><h3>Study on Customer’s Perception on Electric Vehicles and an Application to Eradicate Range Anxiety</h3><p>All-India Research Scholar Summit-2024 · Indian Institute of Technology, Madras</p></div></div>
+<div class="research"><div class="researchNo">03</div><div><h3>Finite Element Analysis of Impeller Manufactured by FDM 3D Printer Using PLA Material</h3><p>PECMACT 8th International Conference-2025 · Panimalar Engineering College</p></div></div></div></section>
 
-<section id="contact">
-<div class="container">
-  <div class="contact">
-    <div class="eyebrow">05 / Contact</div>
-    <h2>Have an engineering problem worth building around?</h2>
-    <div class="contact-grid">
-      <div>
-        <a class="contact-link" href="mailto:akshaypraj2005@gmail.com"><span>Email</span><small>akshaypraj2005@gmail.com ↗</small></a>
-        <a class="contact-link" href="tel:+919345994213"><span>Phone</span><small>+91 9345994213 ↗</small></a>
-      </div>
-      <div>
-        <a class="contact-link" href="https://www.linkedin.com/in/akshay-p-raj/" target="_blank" rel="noopener"><span>LinkedIn</span><small>akshay-p-raj ↗</small></a>
-        <a class="contact-link" href="https://www.youtube.com/@PistonsAutoPedia" target="_blank" rel="noopener"><span>YouTube</span><small>PistonsAutoPedia ↗</small></a>
-        <div class="contact-link"><span>Medium</span><small>Link not supplied</small></div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-</main>
+<section id="projects"><div class="wrap"><div class="head"><div class="num">05 / TECHNICAL PROJECTS</div><div><h2>Projects built around real engineering problems.</h2><p class="lead">Interdisciplinary work across engine testing, vehicle design, computer vision, adaptive control concepts and electric-motor thermal management.</p></div></div>
+<article class="project"><div class="pnum">01</div><div><h3>Engine Tappet Noise Detection System — Ashok Leyland Consultancy Project</h3><p>Led an interdisciplinary team comprising Mechanical and Electronics engineers for development of a tappet-noise detection approach during engine test-bench validation. Performed engine-noise data acquisition and analysis, contributed to defining and refining the detection approach, and designed mechanical mounting and vibration-damping solutions for optimized sensor placement and acoustic data acquisition.</p><div class="chips"><span class="chip">Engine Testing</span><span class="chip">Noise Analysis</span><span class="chip">Sensor Mounting</span><span class="chip">Vibration Damping</span></div></div></article>
+<article class="project"><div class="pnum">02</div><div><h3>Go-Kart Design & Development</h3><p>Served as Technical Head for a student IC go-kart program, overseeing chassis design, fabrication, powertrain and braking subsystems under competition regulations. Performed crash/impact analysis using ANSYS to evaluate structural integrity and safety parameters. Cleared technical inspection and secured AIR 18 at Formula Kart Design Challenge Season 9 at Kari Motor Speedway. Secured Winner — Aesthetic Event and Winner — Cost Optimization Event in the CV category at Formula Kart Racing Championship Season 6.</p></div></article>
+<article class="project"><div class="pnum">03</div><div><h3>Intelli-Speed Limiter — An Adaptive Automobile Speed Enforcement System</h3><p>Developed a multi-layer adaptive speed-limiting system integrating Computer Vision, RFID and GPS-based speed-limit inputs for fail-safe enforcement. Built the detection and communication workflow in Python, including traffic-sign recognition, image preprocessing and transfer of detected limits to MATLAB. Simulated redundancy-based control logic in MATLAB to validate real-time speed capping and lowest-limit priority under varying input scenarios. Secured Finalist position at IEEE YESIST12 at the National University of Malaysia (UKM), Selangor, Malaysia.</p></div></article>
+<article class="project"><div class="pnum">04</div><div><h3>Thermal Management of PMSM Motors: A Comprehensive Study on Cooling Techniques and Coolant Optimisation</h3><p>Research focused on cooling techniques and coolant optimisation for permanent-magnet synchronous motors, addressing thermal-management considerations relevant to electric mobility applications.</p></div></article>
+</div></section>
 
-<footer class="container">
-  <span>© <span id="year"></span> Akshay Perumal Raj</span>
-  <span>Mechanical Engineering · Automotive R&D · Mobility Systems</span>
-</footer>
+<section id="stack"><div class="wrap"><div class="head"><div class="num">06 / TECH STACK</div><div><h2>The engineering toolkit.</h2><p class="lead">CAD, simulation, programming, manufacturing and prototyping tools.</p></div></div>
+<div class="stack"><div class="stackBox"><h3>CAD & 3D Modelling</h3><p>SolidWorks<br>CATIA V5<br>Fusion 360<br>AutoCAD</p></div><div class="stackBox"><h3>Simulation & Analysis</h3><p>ANSYS</p></div><div class="stackBox"><h3>Programming</h3><p>Python<br>Java</p></div><div class="stackBox"><h3>Manufacturing & Prototyping</h3><p>CNCTrain — Lathe & Milling<br>Ultimaker Cura — Additive Manufacturing<br>ArtCAM — CNC Router<br>PlotBot — Laser Engraving</p></div></div></div></section>
 
+<section><div class="wrap"><div class="head"><div class="num">07 / PUBLISHED RESEARCH WORKS</div><div><h2>Published work.</h2><p class="lead">Published academic outputs documented in the CV.</p></div></div>
+<div class="research"><div class="researchNo">01</div><div><h3>A Study on Contribution of Electric Vehicles in Clean India Campaign and Its Sustainability & Eco-friendliness</h3><p>ISBN: 978-81-968444-1-7</p></div></div>
+<div class="research"><div class="researchNo">02</div><div><h3>Finite Element Analysis of Impeller Manufactured by FDM 3D Printer Using PLA Material</h3><p>E-ISSN 2348-1269 · P-ISSN 2349-5138</p></div></div></div></section>
+
+<section class="contact" id="contact"><div class="wrap contactGrid"><div><div class="kicker">08 / CONTACT</div><h2>Let’s build something that moves.</h2><p class="lead">For hiring, internships, engineering R&D opportunities, project collaboration or technical discussions, contact me directly.</p></div>
+<div class="links"><a href="mailto:akshaypraj2005@gmail.com?subject=Hiring%20Opportunity%20%E2%80%94%20Akshay%20Perumal%20Raj"><span>✉ Gmail / Email</span><span>Compose ↗</span></a><a href="tel:+919345994213"><span>☎ Phone</span><span>+91 9345994213 ↗</span></a><a href="https://www.linkedin.com/in/akshay-p-raj/" target="_blank" rel="noopener"><span>in LinkedIn</span><span>Open profile ↗</span></a><a href="https://www.youtube.com/@PistonsAutoPedia" target="_blank" rel="noopener"><span>▶ YouTube</span><span>PistonsAutoPedia ↗</span></a><a href="resume.pdf" target="_blank"><span>↓ Resume</span><span>Open CV ↗</span></a></div></div></section>
+</main><footer><div class="wrap">© 2026 Akshay Perumal Raj · Mechanical Engineering · Automotive R&D · Mobility Systems</div></footer>
 <script>
-const root=document.documentElement;
-const saved=localStorage.getItem('theme');
-if(saved) root.dataset.theme=saved;
-document.getElementById('themeToggle').addEventListener('click',()=>{
-  const dark=root.dataset.theme==='dark';
-  root.dataset.theme=dark?'light':'dark';
-  localStorage.setItem('theme',root.dataset.theme);
-});
-document.getElementById('year').textContent=new Date().getFullYear();
+const r=document.documentElement,b=document.getElementById('theme');const s=localStorage.getItem('theme');if(s)r.dataset.theme=s;
+function icon(){b.textContent=r.dataset.theme==='dark'?'☀️':'💡'}icon();
+b.onclick=()=>{r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';localStorage.setItem('theme',r.dataset.theme);icon()};
 </script>
-</body>
-</html>
+</body></html>
